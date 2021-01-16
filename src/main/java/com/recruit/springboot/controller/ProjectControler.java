@@ -8,19 +8,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.recruit.springboot.model.Employee;
-import com.recruit.springboot.repository.EmployeeRepository;
+import com.recruit.springboot.model.Project;
+import com.recruit.springboot.repository.ProjectRepository;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
-public class EmployeeControler {
+public class ProjectControler {
 	
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	private ProjectRepository projectRepository;
 	
-	@GetMapping("employees")
-	public List<Employee> getEmployee() {
-		return this.employeeRepository.findAll();
+	@GetMapping("projects")
+	public List<Project> getProject() {
+		return this.projectRepository.findAll();
 	}
+
 }
