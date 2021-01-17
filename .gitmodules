@@ -1,0 +1,3 @@
+[submodule "SPA-front"]
+	path = SPA-front
+	url = https://github.com/bsdrm/SPA-front

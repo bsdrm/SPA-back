@@ -13,14 +13,15 @@ import com.recruit.springboot.repository.EmployeeRepository;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/employees")
 public class EmployeeControler {
 	
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
-	@GetMapping("employees")
+	@GetMapping //("employees")
 	public List<Employee> getEmployee() {
 		return this.employeeRepository.findAll();
 	}
+
 }

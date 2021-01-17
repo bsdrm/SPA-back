@@ -1,18 +1,13 @@
 package com.recruit.springboot;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.recruit.springboot.model.Employee;
-import com.recruit.springboot.model.Project;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.recruit.springboot.repository.EmployeeRepository;
 import com.recruit.springboot.repository.ProjectRepository;
 
+@EnableJpaRepositories(basePackages = "com.recruit.springboot.repository")
 @SpringBootApplication
 public class RecruitBackendApplication implements CommandLineRunner{
 
@@ -24,13 +19,11 @@ public class RecruitBackendApplication implements CommandLineRunner{
 	private EmployeeRepository employeeRepository;
 	
 	@Autowired
-	private ProjectRepository projectRepository;
-	
+	private ProjectRepository projectRepository;	
 	
 	@Override
 	public void run(String... args) throws Exception {
-		this.employeeRepository.save(new Employee("sample employee"));
-		this.projectRepository.save(new Project("sample"));
+		
 	}
 
 }

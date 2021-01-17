@@ -13,15 +13,15 @@ import com.recruit.springboot.repository.ProjectRepository;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/projects")
 public class ProjectControler {
 	
 	@Autowired
 	private ProjectRepository projectRepository;
 	
-	@GetMapping("projects")
+	@GetMapping //("projects")
 	public List<Project> getProject() {
 		return this.projectRepository.findAll();
 	}
-
+	
 }
